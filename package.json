@@ -1,0 +1,57 @@
+{
+  "name": "electron-react-boilerplate",
+  "version": "1.0.0",
+  "description": "Electron React Boilerplate",
+  "main": "main.js",
+  "scripts": {
+    "hot-server": "cross-env NODE_ENV=development node --max_old_space_size=2096 -r babel-register server.js",
+    "start-hot": "cross-env HOT=1 NODE_ENV=development electron -r babel-register -r babel-polyfill ./app/main.development",
+    "dev": "npm run hot-server -- --start-hot"
+  },
+  "bin": {
+    "electron": "./node_modules/.bin/electron"
+  },
+  "keywords": [
+    "electron",
+    "react"
+  ],
+  "author": {
+    "name": "Hoyang Tsai",
+    "email": "hoyang.t@gmail.com",
+    "url": "http://github.com/hoyangtsai"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "electron-debug": "^1.1.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-dev-expression": "^0.2.1",
+    "babel-plugin-tcomb": "^0.3.24",
+    "babel-plugin-webpack-loaders": "^0.8.0",
+    "babel-polyfill": "^6.20.0",
+    "babel-preset-env": "^1.1.8",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-preset-stage-0": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "cross-env": "^3.1.4",
+    "css-loader": "^0.26.1",
+    "devtron": "^1.4.0",
+    "electron": "^1.4.14",
+    "electron-devtools-installer": "^2.0.1",
+    "express": "^4.14.0",
+    "node-sass": "^4.2.0",
+    "sass-loader": "^4.1.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.14.0",
+    "webpack-dev-middleware": "^1.9.0",
+    "webpack-hot-middleware": "^2.15.0",
+    "webpack-merge": "^2.3.1",
+    "webpack-validator": "^2.3.0"
+  }
+}
