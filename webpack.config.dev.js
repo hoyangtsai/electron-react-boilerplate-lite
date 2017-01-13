@@ -1,24 +1,14 @@
-/* eslint-disable max-len */
-/**
- * Build config for development process that uses Hot-Module-Replacement
- * https://webpack.github.io/docs/hot-module-replacement-with-webpack.html
- */
-
 import webpack from 'webpack';
 import validate from 'webpack-validator';
 import merge from 'webpack-merge';
+
 import baseConfig from './webpack.config.base';
 
 const port = process.env.PORT || 3000;
 
 export default validate(merge(baseConfig, {
-  debug: true,
-
-  devtool: 'inline-source-map',
-
   entry: [
     `webpack-hot-middleware/client?path=http://localhost:${port}/__webpack_hmr`,
-    'babel-polyfill',
     './app/index'
   ],
 
@@ -28,13 +18,6 @@ export default validate(merge(baseConfig, {
 
   module: {
     loaders: [
-      {
-        test: /\.global\.css$/,
-        loaders: [
-          'style-loader',
-          'css-loader?sourceMap'
-        ]
-      },
     ]
   },
 
@@ -50,8 +33,5 @@ export default validate(merge(baseConfig, {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     })
-  ],
-
-  // https://github.com/chentsulin/webpack-target-electron-renderer#how-this-module-works
-  target: 'electron-renderer'
-}));
+  ]
+}))

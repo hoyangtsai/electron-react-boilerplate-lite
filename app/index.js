@@ -1,12 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import './sass/main.scss';
+import './sass/index.scss';
 
-let Entry = React.createClass({
+let App = React.createClass({
   render: function(){
     return (
-      <div className="myDiv">
+      <div className="app">
         Hello Electron!
       </div>
     )
@@ -14,6 +14,6 @@ let Entry = React.createClass({
 });
 
 render(
-  <Entry />,
+  <App />,
   document.getElementById('root')
 );
