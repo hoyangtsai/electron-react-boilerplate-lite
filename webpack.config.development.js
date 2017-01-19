@@ -18,6 +18,10 @@ export default validate(merge(baseConfig, {
 
   module: {
     loaders: [
+      {
+        test: /\.scss$/,
+        loader: 'style!css!sass'
+      }
     ]
   },
 
@@ -33,5 +37,7 @@ export default validate(merge(baseConfig, {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     })
-  ]
+  ],
+
+  target: 'electron-renderer'
 }))

@@ -2,9 +2,10 @@
   "presets": [
     ["env", { "targets": { "node": 6 }, "useBuiltIns": true }],
     "stage-0",
-    "react"
+    "react",
+    "es2015"
   ],
-  "plugins": ["add-module-exports"],
+  "plugins": [],
   "env": {
     "development": {
     },
