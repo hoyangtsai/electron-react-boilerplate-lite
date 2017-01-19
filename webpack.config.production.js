@@ -25,13 +25,14 @@ export default validate(merge(baseConfig, {
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract(
-          'style-loader',
-          'css-loader',
-          'sass-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+          'style',
+          'css!sass'
         )
       }
     ]
   },
+
+  target: 'electron-renderer',
 
   plugins: [
     // https://webpack.github.io/docs/list-of-plugins.html#occurrenceorderplugin
@@ -54,11 +55,9 @@ export default validate(merge(baseConfig, {
     new ExtractTextPlugin('app.css', { allChunks: true }),
 
     new HtmlWebpackPlugin({
-      filename: '../index.html',
+      filename: 'index.html',
       template: 'app/index.html',
       inject: false
     })
-  ],
-
-  target: 'electron-renderer'
+  ]
 }))

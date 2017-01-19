@@ -6,12 +6,14 @@ import baseConfig from './webpack.config.base';
 export default validate(merge(baseConfig, {
   devtool: 'source-map',
 
-  entry: ['babel-polyfill', './app/electron.entry'],
+  entry: ['babel-polyfill', './app/electron.main'],
 
   output: {
     path: __dirname,
     filename: './app/main.js'
   },
+
+  target: 'electron',
 
   plugins: [
     new webpack.optimize.UglifyJsPlugin(),
@@ -23,10 +25,8 @@ export default validate(merge(baseConfig, {
     })
   ],
 
-  target: 'electron-main',
-
   node: {
     __dirname: false,
     __filename: false
-  },
+  }
 }))

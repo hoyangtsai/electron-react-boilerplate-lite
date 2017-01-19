@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "server": "cross-env NODE_ENV=development node --max_old_space_size=2096 -r babel-register server.js",
-    "electron": "cross-env HOT=1 NODE_ENV=development electron -r babel-register -r babel-polyfill ./app/electron.entry",
+    "electron": "cross-env HOT=1 NODE_ENV=development electron -r babel-register -r babel-polyfill ./app/electron.main",
     "dev": "npm run server -- --electron",
     "build-main": "cross-env NODE_ENV=production node -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.electron.js --progress --profile --colors",
     "build-renderer": "cross-env NODE_ENV=production node -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.production.js --progress --profile --colors",
@@ -33,8 +33,7 @@
     },
     "files": [
       "dist/",
-      "node_modules/",
-      "app.html",
+      "index.html",
       "main.js",
       "main.js.map",
       "package.json"
@@ -100,7 +99,7 @@
     "webpack-dev-middleware": "^1.9.0",
     "webpack-dev-server": "^1.16.2",
     "webpack-hot-middleware": "^2.15.0",
-    "webpack-merge": "^2.3.1",
+    "webpack-merge": "^2.4.0",
     "webpack-validator": "^2.3.0"
   }
 }

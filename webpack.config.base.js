@@ -1,6 +1,5 @@
-import validate from 'webpack-validator';
 import path from 'path';
-import { dependencies as externals } from './app/package.json';
+import validate from 'webpack-validator';
 
 export default validate({
   output: {
@@ -16,20 +15,7 @@ export default validate({
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel'
-      },
-      {
-        test: /\.json$/,
-        loader: 'json-loader'
       }
     ]
-  },
-
-  resolve: {
-    extensions: ['', '.js', '.jsx', '.json'],
-    packageMains: ['webpack', 'browser', 'web', 'browserify', ['jam', 'main'], 'main']
-  },
-
-  plugins: [],
-
-  externals: Object.keys(externals || {})
+  }
 })

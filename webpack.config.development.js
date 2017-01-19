@@ -1,7 +1,6 @@
 import webpack from 'webpack';
 import validate from 'webpack-validator';
 import merge from 'webpack-merge';
-
 import baseConfig from './webpack.config.base';
 
 const port = process.env.PORT || 3000;
