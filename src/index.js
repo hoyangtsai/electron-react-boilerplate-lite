@@ -6,9 +6,9 @@ import './sass/index.scss';
 let App = React.createClass({
   render: function(){
     return (
-      <div className="app">
-        Hello Electron!
-      </div>
+      <h1 className="app">
+        Hello world!!
+      </h1>
     )
   }
 });
