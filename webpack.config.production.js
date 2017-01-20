@@ -10,14 +10,10 @@ import baseConfig from './webpack.config.base';
 export default validate(merge(baseConfig, {
   devtool: 'cheap-module-source-map',
 
-  entry: [
-    'babel-polyfill',
-    './app/index'
-  ],
+  entry: ['babel-polyfill', './src/index'],
 
   output: {
-    path: path.join(__dirname, 'app/dist'),
-    publicPath: '../dist/'
+    path: path.join(__dirname, 'app')
   },
 
   module: {
@@ -56,7 +52,7 @@ export default validate(merge(baseConfig, {
 
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'app/index.html',
+      template: 'src/index.html',
       inject: false
     })
   ]

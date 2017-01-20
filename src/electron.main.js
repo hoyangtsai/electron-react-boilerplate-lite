@@ -26,7 +26,6 @@ app.on('ready', async () => {
   });
 
   if (process.env.NODE_ENV === 'development') {
-
     mainWindow.openDevTools();
 
     mainWindow.webContents.on('context-menu', (e, props) => {

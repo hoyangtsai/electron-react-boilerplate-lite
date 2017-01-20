@@ -8,11 +8,11 @@ const port = process.env.PORT || 3000;
 export default validate(merge(baseConfig, {
   entry: [
     `webpack-hot-middleware/client?path=http://localhost:${port}/__webpack_hmr`,
-    './app/index'
+    './src/index'
   ],
 
   output: {
-    publicPath: `http://localhost:${port}/dist/`
+    publicPath: `http://localhost:${port}/app/`
   },
 
   module: {

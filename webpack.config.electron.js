@@ -6,11 +6,11 @@ import baseConfig from './webpack.config.base';
 export default validate(merge(baseConfig, {
   devtool: 'source-map',
 
-  entry: ['babel-polyfill', './app/electron.main'],
+  entry: ['babel-polyfill', './src/electron.main'],
 
   output: {
-    path: __dirname,
-    filename: './app/main.js'
+    path: `${__dirname}/app`,
+    filename: 'main.js'
   },
 
   target: 'electron',
