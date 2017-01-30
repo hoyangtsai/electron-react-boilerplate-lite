@@ -3,15 +3,15 @@ import { render } from 'react-dom';
 
 import './sass/index.scss';
 
-let App = React.createClass({
-  render: function(){
+class App extends React.Component {
+  render() {
     return (
       <h1 className="app">
         Hello world!!
       </h1>
     )
   }
-});
+}
 
 render(
   <App />,
