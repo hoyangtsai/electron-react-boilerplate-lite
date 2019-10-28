@@ -1,7 +1,6 @@
 import path from 'path';
-import validate from 'webpack-validator';
 
-export default validate({
+export default {
   output: {
     path: path.join(__dirname, 'app'),
     filename: 'bundle.js',
@@ -26,4 +25,4 @@ export default validate({
   resolve: {
     extensions: ['', '.js', '.jsx', '.json']
   }
-})
+}

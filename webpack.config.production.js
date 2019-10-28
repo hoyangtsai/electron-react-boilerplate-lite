@@ -1,13 +1,12 @@
 import path from 'path';
 import webpack from 'webpack';
-import validate from 'webpack-validator';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import merge from 'webpack-merge';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 // import BabiliPlugin from 'babili-webpack-plugin';
 import baseConfig from './webpack.config.base';
 
-export default validate(merge(baseConfig, {
+export default merge(baseConfig, {
   devtool: 'cheap-module-source-map',
 
   entry: ['babel-polyfill', './src/index'],
@@ -56,4 +55,4 @@ export default validate(merge(baseConfig, {
       inject: false
     })
   ]
-}))
+})

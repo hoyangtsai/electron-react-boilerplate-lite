@@ -1,11 +1,10 @@
 import webpack from 'webpack';
-import validate from 'webpack-validator';
 import merge from 'webpack-merge';
 import baseConfig from './webpack.config.base';
 
 const port = process.env.PORT || 3000;
 
-export default validate(merge(baseConfig, {
+export default merge(baseConfig, {
   entry: [
     `webpack-hot-middleware/client?path=http://localhost:${port}/__webpack_hmr`,
     './src/index'
@@ -39,4 +38,4 @@ export default validate(merge(baseConfig, {
   ],
 
   target: 'electron-renderer'
-}))
+})

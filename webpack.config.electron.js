@@ -1,9 +1,8 @@
 import webpack from 'webpack';
-import validate from 'webpack-validator';
 import merge from 'webpack-merge';
 import baseConfig from './webpack.config.base';
 
-export default validate(merge(baseConfig, {
+export default merge(baseConfig, {
   devtool: 'source-map',
 
   entry: ['babel-polyfill', './src/electron.main'],
@@ -29,4 +28,4 @@ export default validate(merge(baseConfig, {
     __dirname: false,
     __filename: false
   }
-}))
+})
